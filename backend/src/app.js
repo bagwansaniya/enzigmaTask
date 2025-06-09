@@ -8,14 +8,21 @@ const db = require("./utils/db"); // This will connect automatically
 const app = express();
 const port = process.env.PORT || 8625;
 
-// Middleware
-app.use(express.json());
+// CORS middleware FIRST
 app.use(
   cors({
     origin: "https://enzigma-task-726k.vercel.app",
-    credentials: true, // if you use cookies or authentication headers
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+// Explicitly handle preflight requests
+app.options("*", cors());
+
+// Then JSON middleware
+app.use(express.json());
 
 // Routes
 app.use("/api/auth", authRoutes);
