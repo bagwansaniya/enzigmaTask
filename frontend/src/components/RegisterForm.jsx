@@ -18,7 +18,7 @@ const RegisterForm = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://enzigma-task.vercel.app/api/auth/register",
+        "https://enzigma-task-backend.vercel.app/api/auth/register",
         {
           method: "POST",
           headers: {
