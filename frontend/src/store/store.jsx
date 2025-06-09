@@ -52,7 +52,7 @@ function StoreFunctionlity({ children }) {
 
   useEffect(() => {
     axios
-      .get("https://enzigma-task.vercel.app/api/tasks")
+      .get("https://enzigma-task-backend.vercel.app/api/tasks")
       .then((response) => {
         dispatch({
           type: "set_tasks",
@@ -64,7 +64,7 @@ function StoreFunctionlity({ children }) {
 
   const handle_delete = (id) => {
     axios
-      .delete(`https://enzigma-task.vercel.app/api/tasks/${id}`)
+      .delete(`https://enzigma-task-backend.vercel.app/api/tasks/${id}`)
       .then(() => {
         dispatch({
           type: "delete",
@@ -76,7 +76,7 @@ function StoreFunctionlity({ children }) {
 
   const handle_add = (task) => {
     axios
-      .post("https://enzigma-task.vercel.app/api/tasks", { task })
+      .post("https://enzigma-task-backend.vercel.app/api/tasks", { task })
       .then((response) => {
         const newTask = {
           id: response.data.taskId,
@@ -94,7 +94,7 @@ function StoreFunctionlity({ children }) {
 
   const handle_search = (task) => {
     axios
-      .get(`https://enzigma-task.vercel.app/api/tasks/search/${task}`)
+      .get(`https://enzigma-task-backend.vercel.app/api/tasks/search/${task}`)
       .then((response) => {
         dispatch({
           type: "search",
@@ -106,7 +106,7 @@ function StoreFunctionlity({ children }) {
 
   const handle_completed = (task) => {
     axios
-      .put(`https://enzigma-task.vercel.app/api/tasks/completed/${task.id}`, {
+      .put(`https://enzigma-task-backend.vercel.app/api/tasks/completed/${task.id}`, {
         completed: !task.completed,
       })
       .then(() => {
@@ -132,7 +132,7 @@ function StoreFunctionlity({ children }) {
     }
 
     axios
-      .put(`https://enzigma-task.vercel.app/api/tasks/${currentTaskId}`, {
+      .put(`https://enzigma-task-backend.vercel.app/api/tasks/${currentTaskId}`, {
         task: updatedTaskText,
       })
       .then((response) => {
@@ -166,7 +166,7 @@ function StoreFunctionlity({ children }) {
       position: index, // Assign new position
     }));
 
-    fetch("https://enzigma-task.vercel.app/api/tasks/reorder", {
+    fetch("https://enzigma-task-backend.vercel.app/api/tasks/reorder", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ tasks: updatedOrder }),
