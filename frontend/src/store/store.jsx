@@ -52,7 +52,11 @@ function StoreFunctionlity({ children }) {
 
   useEffect(() => {
     axios
+<<<<<<< HEAD
       .get("https://enzigma-task-backend.vercel.app/api/tasks")
+=======
+      .get("https://enzigmatask.onrender.com/api/tasks")
+>>>>>>> 2c58099 (Update backend and frontend to use Render deployment and fix CORS)
       .then((response) => {
         dispatch({
           type: "set_tasks",
@@ -64,7 +68,11 @@ function StoreFunctionlity({ children }) {
 
   const handle_delete = (id) => {
     axios
+<<<<<<< HEAD
       .delete(`https://enzigma-task-backend.vercel.app/api/tasks/${id}`)
+=======
+      .delete(`https://enzigmatask.onrender.com/api/tasks/${id}`)
+>>>>>>> 2c58099 (Update backend and frontend to use Render deployment and fix CORS)
       .then(() => {
         dispatch({
           type: "delete",
@@ -76,7 +84,11 @@ function StoreFunctionlity({ children }) {
 
   const handle_add = (task) => {
     axios
+<<<<<<< HEAD
       .post("https://enzigma-task-backend.vercel.app/api/tasks", { task })
+=======
+      .post("https://enzigmatask.onrender.com/api/tasks", { task })
+>>>>>>> 2c58099 (Update backend and frontend to use Render deployment and fix CORS)
       .then((response) => {
         const newTask = {
           id: response.data.taskId,
@@ -94,7 +106,11 @@ function StoreFunctionlity({ children }) {
 
   const handle_search = (task) => {
     axios
+<<<<<<< HEAD
       .get(`https://enzigma-task-backend.vercel.app/api/tasks/search/${task}`)
+=======
+      .get(`https://enzigmatask.onrender.com/api/tasks/search/${task}`)
+>>>>>>> 2c58099 (Update backend and frontend to use Render deployment and fix CORS)
       .then((response) => {
         dispatch({
           type: "search",
@@ -106,7 +122,11 @@ function StoreFunctionlity({ children }) {
 
   const handle_completed = (task) => {
     axios
+<<<<<<< HEAD
       .put(`https://enzigma-task-backend.vercel.app/api/tasks/completed/${task.id}`, {
+=======
+      .put(`https://enzigmatask.onrender.com/api/tasks/completed/${task.id}`, {
+>>>>>>> 2c58099 (Update backend and frontend to use Render deployment and fix CORS)
         completed: !task.completed,
       })
       .then(() => {
@@ -132,7 +152,11 @@ function StoreFunctionlity({ children }) {
     }
 
     axios
+<<<<<<< HEAD
       .put(`https://enzigma-task-backend.vercel.app/api/tasks/${currentTaskId}`, {
+=======
+      .put(`https://enzigmatask.onrender.com/api/tasks/${currentTaskId}`, {
+>>>>>>> 2c58099 (Update backend and frontend to use Render deployment and fix CORS)
         task: updatedTaskText,
       })
       .then((response) => {
@@ -166,7 +190,11 @@ function StoreFunctionlity({ children }) {
       position: index, // Assign new position
     }));
 
+<<<<<<< HEAD
     fetch("https://enzigma-task-backend.vercel.app/api/tasks/reorder", {
+=======
+    fetch("https://enzigmatask.onrender.com/api/tasks/reorder", {
+>>>>>>> 2c58099 (Update backend and frontend to use Render deployment and fix CORS)
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ tasks: updatedOrder }),

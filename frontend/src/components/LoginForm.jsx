@@ -16,7 +16,11 @@ const LoginForm = () => {
     e.preventDefault();
     try {
       const response = await fetch(
+<<<<<<< HEAD
         "https://enzigma-task-backend.vercel.app/api/auth/login",
+=======
+        "https://enzigmatask.onrender.com/api/auth/login",
+>>>>>>> 2c58099 (Update backend and frontend to use Render deployment and fix CORS)
         {
           method: "POST",
           headers: {
