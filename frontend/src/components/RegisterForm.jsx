@@ -73,7 +73,7 @@ const RegisterForm = () => {
           />
         </div>
         <ReCAPTCHA
-          sitekey="6LciVqwqAAAAAH6PdO1rYCkljfgsdrkGXXAbXNAT"
+          sitekey="6LdRNlorAAAAAKDSIVSXhnLpws_Zl6WiMPF_5ekV"
           onChange={() => setcapval()}
         />
         <input type="submit" value="Register" />
