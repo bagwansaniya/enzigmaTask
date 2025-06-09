@@ -10,7 +10,12 @@ const port = process.env.PORT || 8625;
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://enzigma-task-726k.vercel.app",
+    credentials: true, // if you use cookies or authentication headers
+  })
+);
 
 // Routes
 app.use("/api/auth", authRoutes);
