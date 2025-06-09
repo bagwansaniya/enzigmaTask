@@ -18,11 +18,7 @@ const RegisterForm = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-<<<<<<< HEAD
-        "https://enzigma-task-backend.vercel.app/api/auth/register",
-=======
         "https://enzigmatask.onrender.com/api/auth/register",
->>>>>>> 2c58099 (Update backend and frontend to use Render deployment and fix CORS)
         {
           method: "POST",
           headers: {
